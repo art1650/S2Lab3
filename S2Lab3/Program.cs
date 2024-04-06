@@ -13,16 +13,24 @@ try
     Console.Write("seconds = ");
     z = int.Parse(Console.ReadLine());
 
-    Chas hours = new Chas();
-    hours.setZnachenna(x);
-    Chas minutes = new Chas();
-    minutes.setZnachenna(y);
-    Chas seconds = new Chas();
-    seconds.setZnachenna (z); 
+    //Chas hours = new Chas();
+    //hours.setZnachenna(x);
+    //Chas minutes = new Chas();
+    //minutes.setZnachenna(y);
+    //Chas seconds = new Chas();
+    //seconds.setZnachenna(z);
 
-    hours.WriteH();
-    minutes.WriteM();
-    seconds.WriteS();
+    Chas Time1 = new Chas();    
+
+    Time1.setHours(x);
+    Time1.setMinutes(y);
+    Time1.setSeconds(z);
+
+    Time1.Write();
+
+    //hours.WriteH();
+    //minutes.WriteM();
+    //seconds.WriteS();
 
     int xp, yp, zp;
     Console.Write("додати годин = ");
@@ -32,16 +40,22 @@ try
     Console.Write("додати секунд = ");
     zp = int.Parse(Console.ReadLine());
 
-    hours.AddTime(xp);
-    minutes.AddTime(yp);
-    seconds.AddTime(zp);
+    Time1.AddTimeH(xp);
+    Time1.AddTimeM(yp);
+    Time1.AddTimeS(zp);
 
-    hours.WriteH();
-    minutes.WriteM();
-    seconds.WriteS();
+    Time1.Write();
 
-   Console.WriteLine(Chas.ToJSON(hours.getZnachenna(), minutes.getZnachenna(), seconds.getZnachenna()));
-   Console.WriteLine(Chas.FromJSON(Chas.ToJSON(hours.getZnachenna(), minutes.getZnachenna(), seconds.getZnachenna())));
+    //hours.AddTime(xp);
+    //minutes.AddTime(yp);
+    //seconds.AddTime(zp);
+
+    //hours.WriteH();
+    //minutes.WriteM();
+    //seconds.WriteS();
+
+   Console.WriteLine(Chas.ToJSON(Time1.getHours(), Time1.getMinutes(), Time1.getSeconds()));
+   Console.WriteLine(Chas.FromJSON(Chas.ToJSON(Time1.getHours(), Time1.getMinutes(), Time1.getSeconds())));
 
    
 }
